@@ -17,12 +17,14 @@ export default class WeatherList extends Component{
 
         return (
             <>
-                <div className="weather-block">
-                    {time} <br />
-                    <img src={`http://openweathermap.org/img/w/${icon}.png`} style={{fontSize: '20px'}}></img>
-                    Temperature: {this.farenhitToCelsius(temp)}&deg;C<br />
-                    {this.farenhitToCelsius(temp_min)}&deg;C &nbsp; {this.farenhitToCelsius(temp_max)}&deg;C <br />
-                    Feels: {this.farenhitToCelsius(feels_like)}&deg;C<br />
+                <div className="col-md-3">
+                    <div className="weather-block">
+                        {time} <br />
+                        <img src={`http://openweathermap.org/img/w/${icon}.png`} style={{fontSize: '20px'}}></img>
+                        current: {this.farenhitToCelsius(temp)}&deg;C<br />
+                        max - {this.farenhitToCelsius(temp_min)}&deg;C &nbsp; min - {this.farenhitToCelsius(temp_max)}&deg;C <br />
+                        feels -  {this.farenhitToCelsius(feels_like)}&deg;C<br />
+                    </div>
                 </div>
             </>
         )

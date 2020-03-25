@@ -15,7 +15,7 @@ export default class WeatherCity extends Component {
                 <form onSubmit={(e) => this.handleSubmit(e)}>
                     <div className="form-group" style={{width: '200px', textAlign: 'right'}}>
                         <label htmlFor="city"></label>
-                        <input type="text" placeholder="Enter City" className="form-control" id="city" onChange={(e) => this.handleInputChange(e)} value={this.state.city}/>
+                        <input type="text" placeholder="Enter city & hit enter" className="form-control" id="city" onChange={(e) => this.handleInputChange(e)} value={this.state.city}/>
                     </div>
 
                 </form>

@@ -1,8 +1,13 @@
+.header-block {
+    width: 50%;
+    display: inline-block;
+}
+
 .weather-block {
     margin-bottom: 20px;
-    display: inline;
-    float: left;
-    margin-right: 20px;
+    background: #efefef;
+    border-radius: 5px;
+    padding: 5px;
 }
 
 button {
@@ -10,9 +15,9 @@ button {
 }
 
 .weather-list-block {
-    border: 1px solid gray;
+    border: 1px solid #eddddd;
     border-radius: 5px;
     padding: 20px;
     overflow: hidden;
-    margin: 10px;
+    margin-bottom: 20px;
 }

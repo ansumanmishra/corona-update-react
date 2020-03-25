@@ -7,8 +7,8 @@ import WeatherPreSelectedList from "./WeatherPreSelectedList";
 class Weather extends Component {
     state = {
         weatherData: [],
-        city: 'bern',
-        preSelectedCities: ['Bhubaneswar', 'Cuttack', 'Bern', 'Hyderabad'],
+        city: 'Bern',
+        preSelectedCities: ['Bern', 'Bhubaneswar', 'Cuttack', 'Hyderabad'],
     };
 
     getWeatherDataFromApi() {
@@ -49,9 +49,7 @@ class Weather extends Component {
         if (this.state.weatherData) {
             weather = this.state.weatherData.map(w => {
                 return (
-                    <div key={w.dt}>
-                        <WeatherList weatherData={w}/>
-                    </div>
+                    <WeatherList key={w.dt} weatherData={w}/>
                 )
             });
         }
@@ -61,11 +59,11 @@ class Weather extends Component {
                 <div className="container">
                     <div>
                         <div style={{width: '50%', display: 'inline-block'}}><WeatherCity handleCityChange={this.handleCityChange} city={this.state.city}/></div>
-                        <div  style={{width: '50%', display: 'inline-block'}}><WeatherPreSelectedList preSelectedCities={this.state.preSelectedCities} preCityCLick={this.handlePreCityClick}/></div>
+                        <div style={{width: '50%', display: 'inline-block'}}><WeatherPreSelectedList preSelectedCities={this.state.preSelectedCities} preCityCLick={this.handlePreCityClick}/></div>
+                        <h4>{this.state.city}</h4>
                     </div>
                     <div className="weather-list-block">
-                        <h4>City: {this.state.city}</h4>
-                    {weather}
+                        <div className="row">{weather}</div>
                     </div>
                 </div>
             </>
