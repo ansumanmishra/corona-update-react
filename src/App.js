@@ -15,11 +15,15 @@ function App() {
         setCountry(country);
     };
 
+    const handleShowAll = () => {
+        setCountry('');
+    };
+
   return (
     <div className="App">
         <Header handleCountryChange={handleCountryChange}/>
         {/*{<Weather />}*/}
-        <Covid country={country}/>
+        <Covid country={country} showAll={handleShowAll}/>
         <Footer />
     </div>
   );

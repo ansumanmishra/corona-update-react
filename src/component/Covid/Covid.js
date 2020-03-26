@@ -48,25 +48,8 @@ export default class Covid extends Component {
         }
     }
 
-    handleCountyChange = (e) => {
-        this.setState({
-            ...this.state,
-            country: e.target.value,
-        })
-    }
-
-    handleSubmit = (e) => {
-        e.preventDefault();
-        this.getCovid19Data();
-    }
-
     handleShowAll = () => {
-        this.setState({
-            ...this.state,
-            country: '',
-        }, () => {
-            this.getCovid19Data();
-        });
+        this.props.showAll();
     }
 
     render() {
