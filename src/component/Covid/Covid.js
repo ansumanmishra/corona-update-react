@@ -27,16 +27,15 @@ export default class Covid extends Component {
         })
             .then(response => response.json())
             .then(data => {
-                let covid19Data= data.response;
+                let covid19Data= data.response.sort( (a, b) => parseInt(b.cases.total, 10) - parseInt(a.cases.total, 10));
                 let summary = covid19Data.filter(res => res.country === 'All');
-                covid19Data = covid19Data.filter( res => res.country !== 'All');
+                covid19Data = covid19Data.filter(res => res.country !== 'All');
 
                 this.setState({
                     ...this.state,
                     covid19Data,
                     summary,
                 });
-                console.log('hi')
             })
             .catch(err => {
                 console.log(err);
