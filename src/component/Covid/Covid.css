@@ -1,13 +1,24 @@
 .covid-block {
-    width: 16%;
     height: 550px;
-    float: left;
-    border: 1px solid #1e7e34;
-    position: fixed;
+    border: none;
     border-radius: 10px;
     margin: 20px;
-    background: #29733a;
-    color: white;
+    float: none;
+    width: 100%;
+    position: static;
+    background: white;
+    color: black;
+}
+
+@media only screen and (min-width: 1350px) {
+    .covid-block {
+        position: fixed;
+        float: left;
+        width: 16%;
+        background: #29733a;
+        color: white;
+        border: 1px solid #1e7e34;
+    }
 }
 
 .summary-individual-block {
