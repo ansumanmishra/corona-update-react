@@ -1,0 +1,15 @@
+.covid-block {
+    width: 16%;
+    height: 550px;
+    float: left;
+    border: 1px solid #1e7e34;
+    position: fixed;
+    border-radius: 10px;
+    margin: 20px;
+    background: #29733a;
+    color: white;
+}
+
+.summary-individual-block {
+    font-size: 30px;
+}

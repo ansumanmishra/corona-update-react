@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+nav {
+  background: #1e7e34;
+}
+
+.navbar-light .navbar-brand {
+  color: white;
+}
+
+.navbar-light .navbar-brand:hover {
+  color: white;
+}
+
