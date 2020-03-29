@@ -15,7 +15,8 @@
         position: fixed;
         float: left;
         width: 16%;
-        background: #29733a;
+        background: rgb(30,126,52);
+        background: linear-gradient(90deg, rgba(30,126,52,1) 0%, rgba(63,136,68,1) 21%, rgba(99,124,101,1) 100%);
         color: white;
         border: 1px solid #1e7e34;
     }

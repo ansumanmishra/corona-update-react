@@ -8,15 +8,15 @@ const CovidSummary = ({summary}) => {
     return (
         <>
             <div className="summary-individual-block">
-                <p>new: <br/>
+                <p>New: <br/>
                 {cases.new}</p>
-                <p>active: <br/>
+                <p>Active: <br/>
                 {cases.active}</p>
-                <p>critical: <br/>
+                <p>Critical: <br/>
                 {cases.critical}</p>
-                <p>recovered: <br/>
+                <p>Recovered: <br/>
                 {cases.recovered}</p>
-                <p>total: <br/>
+                <p>Total: <br/>
                 {cases.total}</p>
             </div>
         </>

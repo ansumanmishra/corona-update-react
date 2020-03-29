@@ -8,9 +8,15 @@ const Header = ({handleCountryChange}) => {
         handleCountryChange(country);
     };
 
+    const handleCityChange = (e) => {
+        const value = e.target.value;
+        setCountry(value);
+        handleCountryChange(value);
+    };
+
     return (
         <>
-            <nav className="navbar navbar-expand-lg navbar-light">
+            <nav className="navbar navbar-expand-sm navbar-light">
                 <a className="navbar-brand">Corona Virus Update</a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -23,7 +29,7 @@ const Header = ({handleCountryChange}) => {
                         <li></li>
                     </ul>
                     <form className="form-inline my-2 my-lg-0" onSubmit={(e) => handleSubmit(e)}>
-                        <input className="form-control mr-sm-2" type="search" placeholder="Search Country" onChange={(e) => setCountry(e.target.value)} value={country} aria-label="Search" />
+                        <input className="form-control mr-sm-2" type="search" placeholder="Search Country" onChange={(e) => handleCityChange(e)} value={country} aria-label="Search" />
                     </form>
                 </div>
             </nav>

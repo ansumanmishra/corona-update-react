@@ -10,7 +10,7 @@ export default class Covid extends Component {
         covid19Data: '',
         country: '',
         summary: ''
-    }
+    };
 
     componentDidMount() {
         this.getCovid19Data();
@@ -38,14 +38,12 @@ export default class Covid extends Component {
                 });
             })
             .catch(err => {
-                console.log(err);
+                console.error(err);
             });
-    }
 
-    componentDidUpdate(prevProps) {
-        if (prevProps.country !== this.props.country) {
-            this.getCovid19Data();
-        }
+        fetch('https://ipinfo.io')
+            .then((response) => response.json())
+            .then(res => console.log(res));
     }
 
     handleShowAll = () => {
@@ -57,7 +55,15 @@ export default class Covid extends Component {
         let covidSummary = '';
 
         if (this.state.covid19Data) {
-            covidData = this.state.covid19Data.map(w => {
+            covidData = this.state.covid19Data.filter( data => {
+                if (this.props.country) {
+                    if (data.country.toLowerCase().includes(this.props.country)) {
+                        return data;
+                    }
+                } else {
+                    return data;
+                }
+            }).map(w => {
                 return (
                     <CovidList covid19Data={w} key={w.country}/>
                 )
@@ -72,16 +78,21 @@ export default class Covid extends Component {
                 {covidSummary}
                 <div className="container">
                     <div>
-                        <div style={{textAlign: 'right', marginTop: '20px', marginBottom: '20px'}}><button className="btn btn-success" onClick={this.handleShowAll}>Show All</button></div>
+                        <div style={{textAlign: 'right', marginTop: '20px', marginBottom: '20px'}}>
+                            <b>{new Date().toLocaleString()}</b>
+{/*
+                            <button className="btn btn-success" onClick={this.handleShowAll}>Show All</button>
+*/}
+                        </div>
                         <table className="table table-striped table-bordered">
                             <thead className="thead-light">
                             <tr>
-                                <th>Country</th>
-                                <th>Cases</th>
-                                <th>Deaths</th>
-                                <th>Critical</th>
-                                <th>Recovered</th>
-                                <th>Active</th>
+                                <th>Country 🏴󠁧󠁢󠁳󠁣󠁴󠁿</th>
+                                <th>Cases 😷 </th>
+                                <th>Deaths ⚰️</th>
+                                <th>Critical 💉</th>
+                                <th>Recovered 🏃🏾</th>
+                                <th>Active 🏥</th>
                             </tr>
                             </thead>
                             <tbody>
